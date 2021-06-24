@@ -1,0 +1,17 @@
+@forward 'Scss/reset';
+@forward 'Scss/variables';
+@forward 'Scss/base';
+@forward 'Scss/utilities';
+@forward 'Scss/media-queries';
+@forward 'Scss/animations';
+@forward 'Scss/fonts';
+@forward './components/nav';
+@forward './components/damier';
+@forward './components/navale';
+@forward './components/song-player';
+@forward './components/hero';
+@forward 'components/exo-count';
+@forward 'components/errors';
+@forward 'components/count-page';
+@forward 'components/commerce';
+@forward 'components/rpg';

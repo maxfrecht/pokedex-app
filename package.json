@@ -1,0 +1,16 @@
+{
+  "name": "pokemonapp",
+  "version": "1.0.0",
+  "description": "Pokedex app",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch Styles/Scss/styles.scss Styles/Css/style.css",
+    "start": "php -S localhost:8000"
+  },
+  "keywords": [],
+  "author": "Maxime Freychet",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.35.1"
+  }
+}
