@@ -4,7 +4,7 @@
   "description": "Pokedex app",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch Styles/Scss/styles.scss Styles/Css/style.css",
+    "sass": "sass --watch src/Styles/Scss/styles.scss src/Styles/Css/style.css",
     "start": "php -S localhost:8000"
   },
   "keywords": [],

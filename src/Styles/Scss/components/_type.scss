@@ -1,0 +1,55 @@
+.types {
+  display: flex;
+  margin-top: 1rem;
+  font-size: 1.4rem;
+}
+.type {
+  min-width: 7rem;
+  padding: .75rem .5rem;
+  border-radius: .3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: fit-content;
+  & + .type {
+    margin-left: .5rem;
+  }
+
+  &.grass {
+    background: green;
+  }
+
+  &.poison {
+    background: purple;
+  }
+
+  &.fire {
+    background: #c15015;
+  }
+
+  &.flying {
+    background: #5872ce;
+  }
+
+  &.water {
+    background: #3686ea;
+  }
+
+  &.bug {
+    background: #2c902c;
+  }
+
+  &.normal {
+    background: #746b64;
+  }
+
+  &.electric {
+    background: #d2aa18;
+    color: #333;
+  }
+
+  &.ground {
+    background: #f5a444;
+    color: #333;
+  }
+}
