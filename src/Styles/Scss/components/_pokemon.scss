@@ -1,0 +1,93 @@
+@import 'stats';
+@import 'ability';
+
+.pokemon {
+  width:100%;
+  position:relative;
+  margin: 10rem 0 5rem 0;
+  background: linear-gradient(rgba(255,255,255, 0.18), rgba(255,255,255, 0.52)),
+  url(../../assets/images/background-details.jpg);
+  background-size:cover;
+  padding: 8rem;
+  border-radius: .3rem;
+  color: #ccc;
+  box-shadow: 0rem 0rem 5rem 5rem rgb(46, 49, 46) inset;
+  &-main {
+    width: 100%;
+    display: flex;
+    flex-direction:row-reverse;
+
+    .stats {
+      flex: 75%;
+      border: .1rem solid;
+    }
+  .abilities-bloc {
+    max-width: 60%;
+    border-radius: .3rem;
+    border: .1rem solid;
+    display: flex;
+    flex-direction:column;
+    margin-top: 1.5rem;
+    margin-left: 1.5rem;
+    align-self: flex-end;
+    padding: 2rem;
+    background-color: rgb(57, 61, 57);
+
+    h3 {
+      font-weight: 300;
+      font-size: 3rem;
+    }
+  }
+    .abilities {
+      columns:30ch 2;
+      & .ability {
+        -webkit-column-break-inside:avoid;
+      }
+    }
+  }
+
+  img {
+    position:absolute;
+    height: 40rem;
+    max-width:30rem;
+    top: -2rem;
+    left: 50%;
+    z-index: 5;
+    animation: 1.5s levitatePokemon ease-in-out infinite;
+
+  }
+  &-top {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(57, 61, 57);
+    padding:3rem;
+    border-radius:.3rem;
+    border: .1rem solid;
+    overflow: hidden;
+
+    &:after {
+      content: '';
+      background-image: var(--artwork);
+      position: absolute;
+      display: inline-block;
+      top: -5rem;
+      left: 2.5rem;
+      background-size: cover;
+      width: 30rem;
+      height: 30rem;
+      filter: grayscale(1);
+      transform: scaleX(-1);
+      opacity: .05;
+    }
+    h2 {
+      position:relative;
+      z-index: 5;
+      font-weight:300;
+      font-size: 4rem;
+      text-transform: uppercase;
+      margin-bottom: 0;
+    }
+  }
+}

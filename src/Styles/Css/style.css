@@ -28,7 +28,6 @@ body {
   font-family: "Ubuntu", sans-serif;
   background: #2e312e;
   color: #ebfff1;
-  min-height: 100vh;
 }
 
 main {
@@ -201,6 +200,17 @@ p {
     opacity: 1;
   }
 }
+@keyframes levitatePokemon {
+  0% {
+    transform: translate(10rem, -2.5%) rotate(-1.5deg);
+  }
+  50% {
+    transform: translate(10rem, 2.5%) rotate(1.5deg);
+  }
+  100% {
+    transform: translate(10rem, -2.5%) rotate(-1.5deg);
+  }
+}
 @keyframes animate {
   0% {
     transform: translate(-50%, -50%) rotate(0deg);
@@ -237,6 +247,12 @@ p {
   display: flex;
   margin-top: 1rem;
   font-size: 1.4rem;
+  align-items: center;
+  height: 100%;
+}
+
+h2 + .types {
+  margin-top: 0;
 }
 
 .type {
@@ -252,32 +268,35 @@ p {
   margin-left: 0.5rem;
 }
 .type.grass {
-  background: green;
+  background: linear-gradient(180deg, #9bcc50 50%, #9bcc50 50%);
+  color: #333;
 }
 .type.poison {
-  background: purple;
+  background: #b97fc9;
 }
 .type.fire {
-  background: #c15015;
+  background: #fd7d24;
 }
 .type.flying {
-  background: #5872ce;
+  background: linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%);
+  color: #333;
 }
 .type.water {
-  background: #3686ea;
+  background: #4592c4;
 }
 .type.bug {
-  background: #2c902c;
+  background: #729f3f;
 }
 .type.normal {
-  background: #746b64;
+  background: #a4acaf;
+  color: #333;
 }
 .type.electric {
-  background: #d2aa18;
+  background: #eed535;
   color: #333;
 }
 .type.ground {
-  background: #f5a444;
+  background: linear-gradient(180deg, #f7de3f 50%, #ab9842 50%);
   color: #333;
 }
 
@@ -330,6 +349,147 @@ p {
   background: #ccc;
   padding: 1.5rem 1rem;
   border-radius: 0.5rem;
+}
+
+.stats {
+  padding: 2rem;
+  background-color: #393d39;
+  margin-top: 1.5rem;
+  border-radius: 0.3rem;
+}
+.stats .stat {
+  margin-bottom: 1.5rem;
+  text-transform: capitalize;
+}
+.stats .stat:first-of-type {
+  margin-top: 1.5rem;
+}
+.stats .progress {
+  display: block;
+  width: 100%;
+  height: 2rem;
+  position: relative;
+  background: rgba(204, 204, 204, 0.5);
+  opacity: 0.5;
+  border-radius: 0.3rem;
+}
+.stats .progress:after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  top: 0;
+  left: 0;
+  width: var(--stat-pourcent);
+  background: linear-gradient(to right, #6509a7, #8b1dd9);
+  border-radius: 0.3rem 0 0 0.3rem;
+}
+
+.ability {
+  width: 100%;
+}
+.ability + .ability {
+  margin-top: 1.5rem;
+}
+.ability .name {
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
+  font-size: 1.8rem;
+  font-style: italic;
+}
+.ability .name span {
+  padding: 0.6rem 0.3rem;
+  background: #ccc;
+  color: #333;
+  border-radius: 0.3rem;
+  font-style: normal;
+}
+.ability .description {
+  line-height: 3rem;
+}
+
+.pokemon {
+  width: 100%;
+  position: relative;
+  margin: 10rem 0 5rem 0;
+  background: linear-gradient(rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.52)), url(../../assets/images/background-details.jpg);
+  background-size: cover;
+  padding: 8rem;
+  border-radius: 0.3rem;
+  color: #ccc;
+  box-shadow: 0rem 0rem 5rem 5rem #2e312e inset;
+}
+.pokemon-main {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.pokemon-main .stats {
+  flex: 75%;
+  border: 0.1rem solid;
+}
+.pokemon-main .abilities-bloc {
+  max-width: 60%;
+  border-radius: 0.3rem;
+  border: 0.1rem solid;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5rem;
+  margin-left: 1.5rem;
+  align-self: flex-end;
+  padding: 2rem;
+  background-color: #393d39;
+}
+.pokemon-main .abilities-bloc h3 {
+  font-weight: 300;
+  font-size: 3rem;
+}
+.pokemon-main .abilities {
+  columns: 30ch 2;
+}
+.pokemon-main .abilities .ability {
+  -webkit-column-break-inside: avoid;
+}
+.pokemon img {
+  position: absolute;
+  height: 40rem;
+  max-width: 30rem;
+  top: -2rem;
+  left: 50%;
+  z-index: 5;
+  animation: 1.5s levitatePokemon ease-in-out infinite;
+}
+.pokemon-top {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #393d39;
+  padding: 3rem;
+  border-radius: 0.3rem;
+  border: 0.1rem solid;
+  overflow: hidden;
+}
+.pokemon-top:after {
+  content: "";
+  background-image: var(--artwork);
+  position: absolute;
+  display: inline-block;
+  top: -5rem;
+  left: 2.5rem;
+  background-size: cover;
+  width: 30rem;
+  height: 30rem;
+  filter: grayscale(1);
+  transform: scaleX(-1);
+  opacity: 0.05;
+}
+.pokemon-top h2 {
+  position: relative;
+  z-index: 5;
+  font-weight: 300;
+  font-size: 4rem;
+  text-transform: uppercase;
+  margin-bottom: 0;
 }
 
 /*# sourceMappingURL=style.css.map */

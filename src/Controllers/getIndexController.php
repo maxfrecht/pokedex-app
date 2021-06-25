@@ -1,5 +1,7 @@
 <?php
 
 include_once '../Controllers/pokemonIndexController.php';
-
-$indexController = new pokemonIndexController();
+session_start();
+if(!isset($_SESSION['indexController'])) {
+    $_SESSION['indexController'] = new pokemonIndexController();
+}

@@ -7,12 +7,8 @@ class pokemonIndexController {
         $this->apiService = ApiService::getInstance();
     }
 
-    public function displayPokemonList():void {
-        echo '<ul class="pokemon-list">';
-        foreach ($this->apiService->getPokemons() as $pokemon) {
-            include '../Views/pokemonIndexListItem.php';
-        }
-        echo '</ul>';
+    public function getPokemons():array {
+        return $this->apiService->getPokemons();
     }
 
     /**

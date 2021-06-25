@@ -1,0 +1,23 @@
+.ability {
+  width:100%;
+  &+.ability {
+    margin-top: 1.5rem;
+  }
+  .name {
+    margin-bottom: .5rem;
+    text-transform: capitalize;
+    font-size: 1.8rem;
+    font-style: italic;
+    span {
+      padding:0.6rem .3rem;
+      background: #ccc;
+      color: #333;
+      border-radius: .3rem;
+      font-style: normal;
+    }
+
+  }
+  .description {
+    line-height: 3rem;
+  }
+}

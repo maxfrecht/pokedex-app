@@ -24,5 +24,5 @@
             </div>
         </div>
     </div>
-    <a href="src/Views/pokemonDetail.php?order=<?= $pokemon->getOrder() ?>">Voir la fiche</a>
+    <a href="pokemonDetail.php?order=<?= $pokemon->getOrder() ?>">Voir la fiche</a>
 </li>

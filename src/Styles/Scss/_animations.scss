@@ -7,6 +7,18 @@
   }
 }
 
+@keyframes levitatePokemon {
+  0% {
+    transform: translate(10rem, -2.5%) rotate(-1.5deg);
+  }
+  50% {
+    transform : translate(10rem, 2.5%) rotate(1.5deg);
+  }
+  100% {
+    transform: translate(10rem, -2.5%) rotate(-1.5deg);
+  }
+}
+
 @keyframes animate {
   0% {
     transform: translate(-50%, -50%) rotate(0deg);
