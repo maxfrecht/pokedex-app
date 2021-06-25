@@ -308,6 +308,18 @@ h2 + .types {
   color: #333;
 }
 
+.btn {
+  padding: 1.5rem 2rem;
+  color: #f1f1f1;
+  border-radius: 0.3rem;
+}
+.btn-back {
+  background: #382252;
+  position: relative;
+  z-index: 5;
+  border: 0.1rem solid rgba(204, 204, 204, 0.5);
+}
+
 .pokemon-list .list-item {
   position: relative;
   display: flex;
@@ -479,7 +491,7 @@ h2 + .types {
 .pokemon {
   width: 100%;
   position: relative;
-  margin: 7.5rem 0 5rem 0;
+  margin: 7.5rem 0 0 0;
   background: linear-gradient(rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.52)), url(../../assets/images/background-details.jpg);
   background-size: cover;
   padding: 8rem;

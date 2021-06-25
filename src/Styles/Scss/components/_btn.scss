@@ -1,0 +1,11 @@
+.btn {
+  padding: 1.5rem 2rem;
+  color: #f1f1f1;
+  border-radius:.3rem;
+  &-back {
+    background: #382252;
+    position: relative;
+    z-index:5;
+    border: .1rem solid rgba(204, 204, 204, 0.5);
+  }
+}

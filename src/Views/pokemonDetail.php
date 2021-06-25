@@ -9,7 +9,7 @@ $pokemon = $detailController->getPokemon();
         <?php
         include '../Views/pokemonDetailView.php';
         ?>
-        <a style="padding: 1.5rem 2rem; color: #f1f1f1; background: #b84848" href="http://localhost:8000/src/Views/pokemonIndex.php">Retour au Pokedex</a>
+        <a class="btn btn-back" href="http://localhost:8000/src/Views/pokemonIndex.php">Retour au Pokedex</a>
     </div>
 <?php
 @include_once 'footer.php';
