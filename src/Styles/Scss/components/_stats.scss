@@ -1,3 +1,4 @@
+@import '../animations';
 .stats {
   padding: 2rem;
   background-color: rgb(57, 61, 57);
@@ -26,6 +27,7 @@
       top: 0;
       left: 0;
       width: var(--stat-pourcent);
+      animation: stats 1s ease-in-out;
       background: linear-gradient(to right, #6509a7, #8b1dd9);
       border-radius: .3rem 0 0 .3rem;
     }

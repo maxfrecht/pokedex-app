@@ -42,7 +42,7 @@
                 ?>
                 <li class="stat">
                     <div class="stat"><?= $stat ?></div>
-                    <div class="progress" style="--stat-pourcent:<?= $value / 255 * 100 . '%' ?>"></div>
+                    <div class="progress" style="--stat-pourcent:<?= $value / 200 * 100 . '%' ?>"></div>
                 </li>
                 <?php
             }

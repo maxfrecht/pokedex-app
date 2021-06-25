@@ -200,6 +200,14 @@ p {
     opacity: 1;
   }
 }
+@keyframes stats {
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--stat-pourcent);
+  }
+}
 @keyframes levitatePokemon {
   0% {
     transform: translate(10rem, -2.5%) rotate(-1.5deg);
@@ -351,6 +359,65 @@ h2 + .types {
   border-radius: 0.5rem;
 }
 
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes stats {
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--stat-pourcent);
+  }
+}
+@keyframes levitatePokemon {
+  0% {
+    transform: translate(10rem, -2.5%) rotate(-1.5deg);
+  }
+  50% {
+    transform: translate(10rem, 2.5%) rotate(1.5deg);
+  }
+  100% {
+    transform: translate(10rem, -2.5%) rotate(-1.5deg);
+  }
+}
+@keyframes animate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: translateY(-50%) rotate(0) scale(1);
+  }
+  100% {
+    transform: translateY(-50%) rotate(360deg) scale(1);
+  }
+}
+@keyframes rotateAlbum {
+  0% {
+    transform: translateY(-50%) scale(10) rotate(0);
+  }
+  100% {
+    transform: translateY(-50%) scale(10) rotate(360deg);
+  }
+}
+@keyframes bright {
+  0% {
+    left: -50%;
+  }
+  100% {
+    left: 150%;
+  }
+}
 .stats {
   padding: 2rem;
   background-color: #393d39;
@@ -380,6 +447,7 @@ h2 + .types {
   top: 0;
   left: 0;
   width: var(--stat-pourcent);
+  animation: stats 1s ease-in-out;
   background: linear-gradient(to right, #6509a7, #8b1dd9);
   border-radius: 0.3rem 0 0 0.3rem;
 }
@@ -404,13 +472,14 @@ h2 + .types {
   font-style: normal;
 }
 .ability .description {
-  line-height: 3rem;
+  line-height: 2.6rem;
+  font-size: 1.4rem;
 }
 
 .pokemon {
   width: 100%;
   position: relative;
-  margin: 10rem 0 5rem 0;
+  margin: 7.5rem 0 5rem 0;
   background: linear-gradient(rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.52)), url(../../assets/images/background-details.jpg);
   background-size: cover;
   padding: 8rem;
