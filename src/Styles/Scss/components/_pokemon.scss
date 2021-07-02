@@ -40,6 +40,7 @@
   }
     .abilities {
       columns:30ch 2;
+      gap: 2rem;
       & .ability {
         -webkit-column-break-inside:avoid;
       }
@@ -48,12 +49,12 @@
 
   img {
     position:absolute;
-    height: 40rem;
+    max-height: 30rem;
     max-width:30rem;
     top: -2rem;
     left: 50%;
     z-index: 5;
-    animation: 1.5s levitatePokemon ease-in-out infinite;
+    animation: 5s levitatePokemon ease-in-out infinite;
 
   }
   &-top {

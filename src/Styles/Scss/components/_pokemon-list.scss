@@ -48,6 +48,16 @@
       }
     }
 
+    .buttons {
+      margin: 0;
+      display: flex;
+      align-items: center;
+
+      a + a {
+        margin-left: 2rem;
+      }
+    }
+
     a {
       color: #333;
       background: #ccc;

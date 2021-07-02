@@ -1,0 +1,13 @@
+.pagination {
+  margin: 3rem 0;
+  display: flex;
+  justify-content: center;
+  li {
+    & + li {
+      margin-left: 2rem;
+    }
+    a {
+      color: #f1f1f1;
+    }
+  }
+}

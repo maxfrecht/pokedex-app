@@ -1,6 +1,6 @@
 <?php
 /**
- * @var Pokemon $pokemon;
+ * @var Pokemon $pokemon ;
  */
 ?>
 <li class="list-item">
@@ -17,12 +17,14 @@
                     <?= $pokemon->getTypes()[0] ?>
                 </div>
                 <?php if (count($pokemon->getTypes()) > 1) { ?>
-                <div class="type <?= $pokemon->getTypes()[1] ?>">
-                    <?= $pokemon->getTypes()[1] ?>
-                </div>
+                    <div class="type <?= $pokemon->getTypes()[1] ?>">
+                        <?= $pokemon->getTypes()[1] ?>
+                    </div>
                 <?php } ?>
             </div>
         </div>
     </div>
-    <a href="pokemonDetail.php?order=<?= $pokemon->getOrder() ?>">Voir la fiche</a>
+    <div class="buttons"><a href="pokemonDetail.php?order=<?= $pokemon->getOrder() ?>">Voir la fiche</a>
+        <a href="../Controllers/addPokemonToTeam.php?id_pokemon=<?= $pokemon->getOrder() ?>">Ajouter à une Équipe</a>
+    </div>
 </li>

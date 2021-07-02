@@ -279,6 +279,9 @@ h2 + .types {
   background: linear-gradient(180deg, #9bcc50 50%, #9bcc50 50%);
   color: #333;
 }
+.type.dark {
+  background: linear-gradient(180deg, #707070 50%, #707070 50%);
+}
 .type.poison {
   background: #b97fc9;
 }
@@ -299,6 +302,31 @@ h2 + .types {
   background: #a4acaf;
   color: #333;
 }
+.type.fighting {
+  background: linear-gradient(180deg, #d56723 50%, #d56723 50%);
+}
+.type.psychic {
+  background: linear-gradient(180deg, #f366b9 50%, #f366b9 50%);
+}
+.type.rock {
+  background: linear-gradient(180deg, #a38c21 50%, #a38c21 50%);
+}
+.type.steel {
+  background: linear-gradient(180deg, #9eb7b8 50%, #9eb7b8 50%);
+}
+.type.fairy {
+  background: linear-gradient(180deg, #fdb9e9 50%, #fdb9e9 50%);
+  color: #333;
+}
+.type.dragon {
+  background: linear-gradient(180deg, #53a4cf 50%, #f16e57 50%);
+}
+.type.ghost {
+  background: linear-gradient(180deg, #7b62a3 50%, #7b62a3 50%);
+}
+.type.ice {
+  background: linear-gradient(180deg, #51c4e7 50%, #51c4e7 50%);
+}
 .type.electric {
   background: #eed535;
   color: #333;
@@ -309,15 +337,41 @@ h2 + .types {
 }
 
 .btn {
-  padding: 1.5rem 2rem;
+  padding: 1rem;
+  border: 0;
+  background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.36), rgba(0, 0, 0, 0.74));
   color: #f1f1f1;
   border-radius: 0.3rem;
+  cursor: pointer;
+  width: fit-content;
+  height: fit-content;
 }
-.btn-back {
-  background: #382252;
-  position: relative;
-  z-index: 5;
-  border: 0.1rem solid rgba(204, 204, 204, 0.5);
+.btn-danger {
+  background: #972424;
+}
+.btn-update {
+  color: #333;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: #77d50d;
+}
+
+.buttons {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+}
+.buttons .btn + .btn, .buttons form + .btn {
+  margin-left: 1rem;
+}
+.buttons form {
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+}
+.buttons form input[type=submit] {
+  margin: 0;
 }
 
 .pokemon-list .list-item {
@@ -363,6 +417,14 @@ h2 + .types {
   width: 7.5rem;
   margin-right: 1rem;
   user-select: none;
+}
+.pokemon-list .list-item .buttons {
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+.pokemon-list .list-item .buttons a + a {
+  margin-left: 2rem;
 }
 .pokemon-list .list-item a {
   color: #333;
@@ -477,11 +539,13 @@ h2 + .types {
   font-style: italic;
 }
 .ability .name span {
+  position: relative;
   padding: 0.6rem 0.3rem;
   background: #ccc;
   color: #333;
   border-radius: 0.3rem;
   font-style: normal;
+  font-size: 1.2rem;
 }
 .ability .description {
   line-height: 2.6rem;
@@ -526,18 +590,19 @@ h2 + .types {
 }
 .pokemon-main .abilities {
   columns: 30ch 2;
+  gap: 2rem;
 }
 .pokemon-main .abilities .ability {
   -webkit-column-break-inside: avoid;
 }
 .pokemon img {
   position: absolute;
-  height: 40rem;
+  max-height: 30rem;
   max-width: 30rem;
   top: -2rem;
   left: 50%;
   z-index: 5;
-  animation: 1.5s levitatePokemon ease-in-out infinite;
+  animation: 5s levitatePokemon ease-in-out infinite;
 }
 .pokemon-top {
   position: relative;
@@ -571,6 +636,74 @@ h2 + .types {
   font-size: 4rem;
   text-transform: uppercase;
   margin-bottom: 0;
+}
+
+.pagination {
+  margin: 3rem 0;
+  display: flex;
+  justify-content: center;
+}
+.pagination li + li {
+  margin-left: 2rem;
+}
+.pagination li a {
+  color: #f1f1f1;
+}
+
+.add-movie {
+  margin-top: 5rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+form .form-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+form .form-group + .form-group {
+  margin-top: 2rem;
+}
+form .form-group input, form .form-group textarea, form .form-group select {
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+form .form-group input::placeholder, form .form-group textarea::placeholder, form .form-group select::placeholder {
+  color: transparent;
+}
+form .form-group input:not(:placeholder-shown) + label, form .form-group textarea:not(:placeholder-shown) + label, form .form-group select:not(:placeholder-shown) + label {
+  display: none;
+}
+form .form-group input:focus + label, form .form-group textarea:focus + label, form .form-group select:focus + label {
+  transform: translateY(-50%) translateX(-200%);
+}
+form .form-group label {
+  position: absolute;
+  color: rgba(51, 51, 51, 0.48);
+  top: 50%;
+  transform: translateY(-50%);
+  left: 1rem;
+  transition: transform 0.2s ease-in-out;
+}
+form .form-group label[for=date] {
+  color: transparent;
+}
+form input[type=submit] {
+  margin: 2rem 0;
+  width: fit-content;
+}
+
+.welcom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  background: rgba(241, 241, 241, 0.3);
+  margin: 2rem 0;
+  border-radius: 0.3rem;
 }
 
 /*# sourceMappingURL=style.css.map */

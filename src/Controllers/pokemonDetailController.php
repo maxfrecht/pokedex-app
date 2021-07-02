@@ -10,7 +10,7 @@ class pokemonDetailController
     public function __construct() {
         $this->pokedex = $_SESSION['indexController']->getApiService();
         if(isset($_GET['order'])) {
-            $this->pokemon = $this->pokedex->getPokemonByOrder($_GET['order']);
+            $this->pokemon = $this->pokedex->getPokemonByOrder($_GET['order'], ceil(intval($_GET['order'])/20));
         }
     }
 
